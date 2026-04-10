@@ -1,0 +1,42 @@
+/* You can add any custom global styles here if needed. */
+/* daisyUI and Tailwind CSS are already loaded, so no imports are necessary. */
+
+/* Custom font for headings - Poppins is pre-loaded */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Ensure body uses Inter (font-sans) */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom active link style for Navbar */
+.navbar .menu li a.active {
+  background-color: transparent; /* Override daisyUI default active background */
+  color: hsl(var(--p)); /* Use primary color for active link text */
+  font-weight: 600;
+  position: relative;
+}
+
+.navbar .menu li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 1rem); /* Adjust width as needed */
+  height: 2px;
+  background-color: hsl(var(--p));
+  border-radius: 2px;
+}
+
+/* Remove default focus outline for better aesthetics, rely on daisyUI/Tailwind hover/active states */
+*:focus {
+  outline: none;
+}
+
+/* Optional: Smooth scroll for anchor links if implemented */
+html {
+  scroll-behavior: smooth;
+}
